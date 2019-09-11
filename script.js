@@ -1,10 +1,10 @@
 //
-// 
+//
 //
 // CURRENT BUGS:
-// 
-// 
-// 
+//
+//
+//
 //
 //Beento Variables
 beentobedroom = true;
@@ -40,7 +40,7 @@ takewoman = false;
 $(document).ready(function() {
 	$("#console").fadeIn(3000);
 	$("#message_start").fadeIn(3000);
-	$("#area_bedroom").fadeIn(3000);
+	// $("#area_bedroom").fadeIn(3000);
 	$("#command_line").fadeIn(3000);
 	$("form").submit(function() {
 		var input = $("#command_line").val().toLowerCase();
@@ -56,12 +56,21 @@ $(document).ready(function() {
 		//
 
 		//
+		//start
+		if (input.indexOf("start") > -1) {
+			if (input == "start") {
+				$("#area_bedroom").clone().insertBefore("#placeholder").fadeIn(1000);
+			}
+		}
+		//end start
+		//
+		//
 		// take
-		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1) {			
+		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1) {
 			if (input == "take") {
 				$('<p>Take what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//gun
 			else if (input == "take gun") {
 				if (currentroom == "bedroom" && gun == false) {
@@ -73,7 +82,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			// wallet
 			else if (input == "take wallet") {
 				if (currentroom == "bedroom" && wallet == false) {
@@ -85,7 +94,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			// jacket
 			else if (input == "take jacket") {
 				if (currentroom == "bedroom" && jacket == false) {
@@ -98,7 +107,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			// chinese take out
 			else if (input == "take chinese take out" || input == "take chinese food" || input == "take chinese takeout"){
 				if (currentroom == "bedroom" && chinesefood == false){
@@ -108,9 +117,9 @@ $(document).ready(function() {
 				else {
 					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-			}			
+			}
 			//
-			
+
 			// woman
 			else if (input == "take woman" || input == "take girl"){
 				if (currentroom == "bedroom" && takewoman == false){
@@ -120,9 +129,9 @@ $(document).ready(function() {
 				else {
 					$('<p>Stop trying to pick her up! She\'s too heavy!</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-			}			
+			}
 			//
-			
+
 			// brush
 			else if (input == "take brush" || input == "take tooth brush" || input == "take toothbrush") {
 				if (currentroom == "bathroom" && brush == false) {
@@ -136,9 +145,9 @@ $(document).ready(function() {
 			//
 			else {
 				$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
-			}	
+			}
 			//*
-			
+
 			// pen
 			/*
 			else if (input == "take pen") {
@@ -155,7 +164,7 @@ $(document).ready(function() {
 				$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			// Bible
 			else if (input == "take bible") {
 				if (currentroom == "bedroom" && bible == false) {
@@ -171,7 +180,7 @@ $(document).ready(function() {
 				$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			// key
 			else if (input == "take key") {
 				if (currentroom == "bedroom" && key == false) {
@@ -204,7 +213,7 @@ $(document).ready(function() {
 					g_wep = "";
 				}
 				//
-				
+
 				// wallet
 				if (wallet == true) {
 					wal = "Wallet<br />";
@@ -213,7 +222,7 @@ $(document).ready(function() {
 					wal = "";
 				}
 				//
-				
+
 				// jacket
 				if (jacket == true) {
 					jack = "Jacket<br />";
@@ -222,7 +231,7 @@ $(document).ready(function() {
 					jack = "";
 				}
 				//
-				
+
 				// matches
 				if (matches == true) {
 					match = "Matches<br />";
@@ -248,7 +257,7 @@ $(document).ready(function() {
 					ky = "";
 				}
 				//
-				
+
 				//pen
 				if (pen == true) {
 					pn = "Pen<br />";
@@ -257,7 +266,7 @@ $(document).ready(function() {
 					pn = "";
 				}
 				//
-				
+
 				//chinese food
 				if (chinesefood == true) {
 					cf = "Chinese Takeout<br / >";
@@ -284,11 +293,11 @@ $(document).ready(function() {
 		//
 		//eat
 		else if (input.indexOf("eat") > -1) {
-			
+
 			if (input == "eat") {
 				$('<p>Eat what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//Chinese Takeout
 			else if (input == "eat chinese take out" || input == "eat chinese food" || input == "eat chinese takeout") {
 				if (chinesefood == true) {
@@ -299,7 +308,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-			//woman 
+			//woman
 			else if (input == "eat woman" || input == "eat girl"){
 				if (currentroom == "bedroom" && eatwoman == false) {
 					$('<p>WHAT ARE YOU DOING? Do not be a cannibal! Leave the poor woman alone.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -365,17 +374,17 @@ $(document).ready(function() {
 				else {
 					$("#area_bedroom").clone().insertBefore("#placeholder").fadeIn(3000);
 					currentroom = "bedroom";
-					beentobedroom = true;	
+					beentobedroom = true;
 				}
 			}
 
 			// step outside room
-			else if (input == "go east" || input == "go outside" && currentroom == "bedroom") {					
+			else if (input == "go east" || input == "go outside" && currentroom == "bedroom") {
 				if (beenoutsidemroom == false && gun == true) {
 					$("#container").fadeOut(3000, function() {
 						$("#doorlock").fadeIn(3000);
 					});
-					
+
 				}
 				// else if (beenoutsidemroom == false) {
 				// 	if (bike == false) {
@@ -395,7 +404,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//outside to bedroom
 			else if (input == "go west" && currentroom == "outside_room") {
 				if (beentobedroom == true) {
@@ -420,7 +429,7 @@ $(document).ready(function() {
 				else {
 					$("#area_bedroom").clone().insertBefore("#placeholder").fadeIn(3000);
 					currentroom = "bedroom";
-					beentobedroom = true;	
+					beentobedroom = true;
 				}
 			}
 			//
@@ -450,11 +459,11 @@ $(document).ready(function() {
 		//
 		//search
 		else if (input.indexOf("search") > -1) {
-			
+
 			if (input == "search") {
 				$('<p>Search what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//table
 			else if (input == "search table" || input == "search bedside table" || input == "search bed side table") {
 				if (currentroom == "bedroom" && searchtable == false) {
@@ -464,7 +473,7 @@ $(document).ready(function() {
 				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			//woman
 			else if (input == "search woman" || input == "search girl") {
 				if (currentroom == "bedroom" && searchwoman == false) {
@@ -482,14 +491,14 @@ $(document).ready(function() {
 		//
 		//kill
 		else if (input.indexOf("kill") > -1) {
-			
+
 			if (input == "kill") {
 				$('<p>Kill what with what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			else if (input == "kill woman" || input == "kill girl" && currentroom == "bedroom") {
 				$('<p>Kill woman with what?</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//woman
 			else if (input == "kill woman with gun" || input == "kill whore with gun" || input == "kill girl with gun") {
 				if (currentroom == "bedroom" && gun == true) {
@@ -499,7 +508,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-					
+
 			else if (input == "kill woman with pen" || input == "kill whore with pen" || input == "kill girl with pen") {
 				if (currentroom == "bedroom" && pen == true) {
 					$('<p>WHAT ARE YOU DOING? <br />Why would you want to kill some random woman that you woke up beside? Stop it!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -508,7 +517,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-					
+
 			else if (input == "kill woman with bible" || input == "kill whore with bible" || input == "kill girl with bible") {
 				if (currentroom == "bedroom" && pen == true) {
 					$('<p>JEZZ. WHAT ON EARTH ARE YOU DOING? <br />Why would you want to kill some random woman that you woke up beside? <br />You should be reading the Bible to yourself!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -518,8 +527,8 @@ $(document).ready(function() {
 				}
 			}
 			//
-	
-			else $('<p>You can\'t do that!</p>').insertBefore("#placeholder").fadeIn(1000);		
+
+			else $('<p>You can\'t do that!</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
 		//end kill
 		//
