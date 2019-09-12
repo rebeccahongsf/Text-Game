@@ -10,45 +10,65 @@
 <body>
 
 	<div id="container">
-	<div id="console">
+		<div id="console">
 
-	<!--
-	MAIN GAME PLOT
-	-->
-	<p id="message_start"> Welcome to my Story! <br />Type HELP at any point for a list of commands that you may use. <br />Type START to begin.</p>
+		<!--
+		MAIN GAME PLOT
+		-->
+		<p id="message_start"> Welcome to my Story! <br />Type HELP at any point for a list of commands that you may use. <br />Type START to begin.</p>
 
-	<p id="message_help" style="display: none;">Help: (replace italicized words)<br />
-	take <i>object</i>: takes the specified object and puts it in your inventory<br />
-	eat <i>food</i>: eats indicated food item<br />
-	kill <i>creature</i> with <i>object</i>: kills indicated creature with specified object<br />
-	inventory: lists everything you are currently carrying<br />
-	unlock <i>door</i> with <i>object</i>: unlocks door with the object you specify<br />
-	go <i>direction</i>: attempts to travel in direction (north, east, south, west)<br />
-	search <i>object</i>: searches the indicated object for items</p>
+		<p id="message_help" style="display: none;">Help: (replace italicized words)<br />
+		take <i>object</i>: takes the specified object and puts it in your inventory<br />
+		eat <i>food</i>: eats indicated food item<br />
+		kill <i>creature</i> with <i>object</i>: kills indicated creature with specified object<br />
+		inventory: lists everything you are currently carrying<br />
+		unlock <i>door</i> with <i>object</i>: unlocks door with the object you specify<br />
+		go <i>direction</i>: attempts to travel in direction (north, east, south, west)<br />
+		search <i>object</i>: searches the indicated object for items</p>
 
-	<p id="area_bedroom">You wake up in a luxurious bed with a massive headache. You can't seem to recall where you are, how you got there, let alone who you are. Besides you lays a woman who appears to be unconscious. On the bedside table, there is a gun and wallet. A sleek jacket sits on the couch besides the main door, which is facing the east. As your eyes scan the room, there is a window to the north of you. In front of the window, there is a coffee table with what appears to be half eaten Chinese take out. There is also a door leading to the bathoom to the west. You feel the woman besides you begins to stir. You should probably get moving.</p>
+		<p id="area_bedroom">You wake up in a luxurious bed with a massive headache. You can't seem to recall where you are, how you got there, let alone who you are. Besides you lays a woman who appears to be unconscious. On the bedside table, there is a gun and wallet. A sleek jacket sits on the couch besides the main door, which is facing the east. As your eyes scan the room, there is a window to the north of you. In front of the window, there is a coffee table with what appears to be half eaten Chinese take out. There is also a door leading to the bathoom to the west. You feel the woman besides you begins to stir. You should probably get moving.</p>
 
-	<p id="area_bathroom" style="display: none;">You have entered the bathroom. To the left there is a bathtub. On the right there is a sink and toilet. A tooth brush balances itself on the edge of the sink.
-	</p>
+		<p id="area_bathroom" style="display: none;">You have entered the bathroom. To the left there is a bathtub. On the right there is a sink and toilet. A tooth brush balances itself on the edge of the sink.
+		</p>
 
-	<p id="area_outsideroom" style="display: none;">You step outside of the room. The hallway floor feels cold and there's a slight breeze coming from the right side of the hall.</p>
+		<p id="area_outsideroom" style="display: none;">You step outside of the room. The hallway floor feels cold and there's a slight breeze coming from the right side of the hall.</p>
 
-	<p id="doorlock" style="display:none;">The door locks behind you. I guess you won't be going back into that room.</p>
+		<p id="doorlock" style="display:none;">The door locks behind you. I guess you won't be going back into that room.</p>
 
-	<!--
-	PLACE HOLDER! : THIS IS WHERE EVERYTHING WILL BE INSERTED BEFORE
-	-->
+		<!--
+		PLACE HOLDER! : THIS IS WHERE EVERYTHING WILL BE INSERTED BEFORE
+		-->
 
-	<div id="placeholder"></div>
-	</div>
+			<div id="placeholder"></div>
+		</div>
 
 	<!-- INPUT !-->
-	<form onsubmit="return false;">
-		<input type="text" id="command_line" size="50" autofocus="autofocus" />
-	</form>
-	</div>
+	<div id="choice_menu" class="choice_menu">
+		<div id="help" class="help inline">
+			<button class="dropbtn" value="help">HELP</button>
+		</div>
+		<div id="move_choice" class="move_choice inline">
+			<button class="dropbtn" id="move">MOVE</button>
+				<div id="dropdown" class="dropdown-content">
+					<button id="move_north" value="move north">NORTH</button>
+					<button id="move_west" value="move west">WEST</button>
+					<button id="move_east" value="move east">EAST</button>
+					<button id="move_south" value="move south">SOUTH</button>
+				</div>
+		</div>
+		<div id="take_choice" class="take_choice inline">
+			<button class="dropbtn" id="move">TAKE</button>
+				<div id="dropdown" class="dropdown-content">
+					<button id="take_gun" value="take gun">GUN</button>
+				</div>
+		</div>
 	</div>
 
+
+	<!-- <form onsubmit="return false;">
+		<input type="text" id="command_line" size="50" autofocus="autofocus" />
+	</form> -->
+	</div>
 
 	<script type="text/javascript" src="script.js"></script>
 

@@ -41,9 +41,11 @@ $(document).ready(function() {
 	$("#console").fadeIn(3000);
 	$("#message_start").fadeIn(3000);
 	// $("#area_bedroom").fadeIn(3000);
-	$("#command_line").fadeIn(3000);
-	$("form").submit(function() {
-		var input = $("#command_line").val().toLowerCase();
+	$("#choice_menu").fadeIn(3000);
+	// $("#command_line").fadeIn(3000);
+	// Turns user input into Lower Case
+	$("button").click(function() {
+		var input = $(this).val();
 
 		//
 		//help
@@ -64,6 +66,7 @@ $(document).ready(function() {
 		}
 		//end start
 		//
+
 		//
 		// take
 		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1) {
