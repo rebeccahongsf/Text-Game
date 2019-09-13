@@ -5,10 +5,13 @@ body {
 #container {
 	color: white;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -300px;
-	margin-left: -400px;
+	margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	height: 500px;
+  width: 500px;
 }
 
 #console {
@@ -19,7 +22,7 @@ body {
 	margin: 0 auto;
 	overflow: auto;
 	height: 400px;
-	width: 600px;
+	width: 500px;
 }
 
 #console p {
@@ -31,12 +34,51 @@ body {
 }
 
 /* BUTTON STYLING */
+#start {
+	margin: auto;
+}
+
+.start .btn {
+	background-color: #db3434;
+  color: white;
+  padding: 16px 20px;
+	margin: auto;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+	width: 85px;
+	margin: auto;
+	display: grid;
+}
+
+
 #choice_menu {
 	display: none;
 }
 
 .choice_menu .inline {
 	display: inline-block;
+}
+
+.choice_menu .help {
+	float: right;
+}
+
+.help .btn {
+	background-color: #db3434;
+  color: white;
+  padding: 16px 20px;
+	margin: auto;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+	width: 85px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #9e2323;
+	outline: none;
 }
 
 .dropbtn {

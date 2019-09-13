@@ -41,12 +41,11 @@ $(document).ready(function() {
 	$("#console").fadeIn(3000);
 	$("#message_start").fadeIn(3000);
 	// $("#area_bedroom").fadeIn(3000);
-	$("#choice_menu").fadeIn(3000);
 	// $("#command_line").fadeIn(3000);
-	// Turns user input into Lower Case
+	// When button is clicked, stores HTML value attribute in input
 	$("button").click(function() {
 		var input = $(this).val();
-
+		$("#start").fadeOut(500);
 		//
 		//help
 		if (input.indexOf("help") > -1) {
@@ -62,6 +61,7 @@ $(document).ready(function() {
 		if (input.indexOf("start") > -1) {
 			if (input == "start") {
 				$("#area_bedroom").clone().insertBefore("#placeholder").fadeIn(1000);
+				$("#choice_menu").fadeIn(3000);
 			}
 		}
 		//end start

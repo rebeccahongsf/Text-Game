@@ -15,7 +15,7 @@
 		<!--
 		MAIN GAME PLOT
 		-->
-		<p id="message_start"> Welcome to my Story! <br />Type HELP at any point for a list of commands that you may use. <br />Type START to begin.</p>
+		<p id="message_start"> Welcome to my Story! <br />Click START when you are ready to begin.</p>
 
 		<p id="message_help" style="display: none;">Help: (replace italicized words)<br />
 		take <i>object</i>: takes the specified object and puts it in your inventory<br />
@@ -26,7 +26,7 @@
 		go <i>direction</i>: attempts to travel in direction (north, east, south, west)<br />
 		search <i>object</i>: searches the indicated object for items</p>
 
-		<p id="area_bedroom">You wake up in a luxurious bed with a massive headache. You can't seem to recall where you are, how you got there, let alone who you are. Besides you lays a woman who appears to be unconscious. On the bedside table, there is a gun and wallet. A sleek jacket sits on the couch besides the main door, which is facing the east. As your eyes scan the room, there is a window to the north of you. In front of the window, there is a coffee table with what appears to be half eaten Chinese take out. There is also a door leading to the bathoom to the west. You feel the woman besides you begins to stir. You should probably get moving.</p>
+		<p id="area_bedroom">Opening your eyes, you immediately find yourself blinded by the glaring lights coming from the ceiling. You shut your eyes and grab your forehead with one hand as you are assaulted by a headache. After a brief moment, it passes and you open your eyes once again slowly, realizing you are laying down on a hard <strong><em>table</em></strong> looking at an unfamiliar ceiling, your back aching. You sit up with your feet touching the ground.</p>
 
 		<p id="area_bathroom" style="display: none;">You have entered the bathroom. To the left there is a bathtub. On the right there is a sink and toilet. A tooth brush balances itself on the edge of the sink.
 		</p>
@@ -43,10 +43,10 @@
 		</div>
 
 	<!-- INPUT !-->
+	<div id="start" class="start">
+			<button class="btn" value="start">START</button>
+	</div>
 	<div id="choice_menu" class="choice_menu">
-		<div id="help" class="help inline">
-			<button class="dropbtn" value="help">HELP</button>
-		</div>
 		<div id="move_choice" class="move_choice inline">
 			<button class="dropbtn" id="move">MOVE</button>
 				<div id="dropdown" class="dropdown-content">
@@ -61,6 +61,9 @@
 				<div id="dropdown" class="dropdown-content">
 					<button id="take_gun" value="take gun">GUN</button>
 				</div>
+		</div>
+		<div id="help" class="help inline">
+			<button class="btn" value="help">HELP</button>
 		</div>
 	</div>
 
