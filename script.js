@@ -1,9 +1,8 @@
 //
-//
+// NOTES:
+// Optimize by breaking down into if functions, similar to the pictures.
 //
 // CURRENT BUGS:
-//
-//
 //
 //
 //Beento Variables
